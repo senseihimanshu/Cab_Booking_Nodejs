@@ -1,0 +1,10 @@
+{
+  "database": {
+    "uri": "mysql://root:sensei@localhost/db_cab_booking",
+    "username": "root",
+    "password": "sensei",
+    "database": "db_cab_booking",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
