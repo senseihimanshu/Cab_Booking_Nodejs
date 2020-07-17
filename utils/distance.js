@@ -18,7 +18,7 @@ const distance = (lat1, lon1, lat2, lon2) => {
   dist = dist * 60 * 1.1515;
   dist *= 1.609344; // To Convert it to Kilometers
 
-  if (dist < 5) {
+  if (dist < 20) {
     return true;
   }
   return false;

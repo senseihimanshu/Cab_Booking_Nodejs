@@ -7,15 +7,17 @@ class CabDao {
 
     const cabs = [];
 
-    CabLocations.findAll().then(
-      cabLocation =>
-        distance(
-          cabLocation.cab_latititude,
-          cabLocation.cab_longitude,
-          sourceLatitude,
-          sourceLongitude
-        ) && cabs.push(cabLocation)
-    );
+    await CabLocations.findAll({ raw: true }).then(cabLocations => {
+      cabLocations.map(
+        cabLocation =>
+          distance(
+            cabLocation.cabLatitude,
+            cabLocation.cabLongitude,
+            sourceLatitude,
+            sourceLongitude
+          ) && cabs.push(cabLocation)
+      );
+    });
 
     return cabs;
   };

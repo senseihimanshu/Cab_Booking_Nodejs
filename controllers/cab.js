@@ -4,8 +4,8 @@ class Cab {
   getNearbyCabs = async (req, res) => {
     try {
       const cabs = await cabModel.getAllCabs({
-        sourceLatitude: req.body.sourceLatitude,
-        sourceLongitude: req.body.sourceLongitude,
+        sourceLatitude: req.query.sourceLatitude,
+        sourceLongitude: req.query.sourceLongitude,
       });
 
       res.send({

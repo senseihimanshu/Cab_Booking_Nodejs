@@ -23,19 +23,19 @@ module.exports = global.sequelize.define(
     },
     sourceLatitude: {
       field: 'source_latitude',
-      type: Sequelize.FLOAT(11, 10),
+      type: Sequelize.FLOAT(14, 7),
     },
     sourceLongitude: {
-      field: 'source_latitude',
-      type: Sequelize.FLOAT(11, 10),
+      field: 'source_longitude',
+      type: Sequelize.FLOAT(14, 7),
     },
     destinationLatitude: {
       field: 'destination_latitude',
-      type: Sequelize.FLOAT(11, 10),
+      type: Sequelize.FLOAT(14, 7),
     },
     destinationLongitude: {
-      field: 'destination_latitude',
-      type: Sequelize.FLOAT(11, 10),
+      field: 'destination_longitude',
+      type: Sequelize.FLOAT(14, 7),
     },
     startTime: {
       field: 'start_time',

@@ -2,8 +2,7 @@ const Bookings = require('../models/Booking');
 
 class BookingDao {
   createBooking = async bookingObj => {
-    const newBooking = Bookings.build(bookingObj);
-    await Bookings.save(newBooking);
+    await Bookings.create(bookingObj);
   };
 
   updateBooking = async updatedObj => {

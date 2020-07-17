@@ -61,11 +61,11 @@ module.exports = {
         },
         cabLatitude: {
           field: 'cab_latitude',
-          type: Sequelize.FLOAT(11, 10),
+          type: Sequelize.FLOAT(14, 7),
         },
         cabLongitude: {
           field: 'cab_longitude',
-          type: Sequelize.FLOAT(11, 10),
+          type: Sequelize.FLOAT(14, 7),
         },
         created_at: Sequelize.DATE,
         modified_at: Sequelize.DATE,
@@ -96,19 +96,19 @@ module.exports = {
         },
         sourceLatitude: {
           field: 'source_latitude',
-          type: Sequelize.FLOAT(11, 10),
+          type: Sequelize.FLOAT(14, 7),
         },
         sourceLongitude: {
           field: 'source_longitude',
-          type: Sequelize.FLOAT(11, 10),
+          type: Sequelize.FLOAT(14, 7),
         },
         destinationLatitude: {
           field: 'destination_latitude',
-          type: Sequelize.FLOAT(11, 10),
+          type: Sequelize.FLOAT(14, 7),
         },
         destinationLongitude: {
           field: 'destination_longitude',
-          type: Sequelize.FLOAT(11, 10),
+          type: Sequelize.FLOAT(14, 7),
         },
         startTime: {
           field: 'start_time',

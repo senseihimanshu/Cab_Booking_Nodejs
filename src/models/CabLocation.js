@@ -4,6 +4,7 @@ module.exports = global.sequelize.define(
   'CabLocation',
   {
     cabId: {
+      field: 'cab_id',
       type: Sequelize.INTEGER(11),
       allowNull: false,
       primaryKey: true,
@@ -12,11 +13,11 @@ module.exports = global.sequelize.define(
     },
     cabLatitude: {
       field: 'cab_latitude',
-      type: Sequelize.FLOAT(11, 10),
+      type: Sequelize.FLOAT(14, 7),
     },
     cabLongitude: {
       field: 'cab_longitude',
-      type: Sequelize.FLOAT(11, 10),
+      type: Sequelize.FLOAT(14, 7),
     },
   },
   {
