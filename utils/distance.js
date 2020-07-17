@@ -1,4 +1,4 @@
-export const distance = (lat1, lon1, lat2, lon2) => {
+const distance = (lat1, lon1, lat2, lon2) => {
   if (lat1 === lat2 && lon1 === lon2) {
     return 0;
   }
@@ -23,3 +23,5 @@ export const distance = (lat1, lon1, lat2, lon2) => {
   }
   return false;
 };
+
+module.exports = distance;

@@ -1,12 +1,16 @@
-import Bookings from '../models/Booking';
+const Bookings = require('../models/Booking');
 
-export const createBooking = async bookingObj => {
-  const newBooking = Bookings.build(bookingObj);
-  await Bookings.save(newBooking);
-};
+class BookingDao {
+  createBooking = async bookingObj => {
+    const newBooking = Bookings.build(bookingObj);
+    await Bookings.save(newBooking);
+  };
 
-export const updateBooking = async updatedObj => {
-  await Bookings.save(updatedObj);
-};
+  updateBooking = async updatedObj => {
+    await Bookings.save(updatedObj);
+  };
 
-export const getBookingsByUserId = async userId => Bookings.findAll({ userId });
+  getBookingsByUserId = async userId => Bookings.findAll({ userId });
+}
+
+module.exports = new BookingDao();

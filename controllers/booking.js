@@ -1,4 +1,4 @@
-const bookingModel = require('../src/daos/bookingDao');
+const bookingModel = require('../src/daos/bookingDao.js');
 
 class Booking {
   create = async (req, res) => {
@@ -38,7 +38,7 @@ class Booking {
     }
   };
 
-  getAllById = async (req, res) => {
+  getAllByUserId = async (req, res) => {
     try {
       const bookings = await bookingModel.getBookingsByUserId(req.query.userId);
 

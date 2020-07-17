@@ -1,20 +1,24 @@
-import CabLocations from '../models/CabLocation';
-import { distance } from '../../utils/distance';
+const CabLocations = require('../models/CabLocation');
+const distance = require('../../utils/distance');
 
-export const getAllCabs = async sourceLocation => {
-  const { sourceLatitude, sourceLongitude } = sourceLocation;
+class CabDao {
+  getAllCabs = async sourceLocation => {
+    const { sourceLatitude, sourceLongitude } = sourceLocation;
 
-  const cabs = [];
+    const cabs = [];
 
-  CabLocations.findAll().then(
-    cabLocation =>
-      distance(
-        cabLocation.cab_latititude,
-        cabLocation.cab_longitude,
-        sourceLatitude,
-        sourceLongitude
-      ) && cabs.push(cabLocation)
-  );
+    CabLocations.findAll().then(
+      cabLocation =>
+        distance(
+          cabLocation.cab_latititude,
+          cabLocation.cab_longitude,
+          sourceLatitude,
+          sourceLongitude
+        ) && cabs.push(cabLocation)
+    );
 
-  return cabs;
-};
+    return cabs;
+  };
+}
+
+module.exports = new CabDao();
