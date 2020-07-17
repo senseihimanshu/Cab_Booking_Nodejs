@@ -17,5 +17,9 @@ export const distance = (lat1, lon1, lat2, lon2) => {
   dist = (dist * 180) / Math.PI;
   dist = dist * 60 * 1.1515;
   dist *= 1.609344; // To Convert it to Kilometers
-  return dist;
+
+  if (dist < 5) {
+    return true;
+  }
+  return false;
 };

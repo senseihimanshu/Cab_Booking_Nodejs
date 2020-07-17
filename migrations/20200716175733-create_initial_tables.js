@@ -97,7 +97,7 @@ module.exports = {
           type: Sequelize.FLOAT(11, 10),
         },
         sourceLongitude: {
-          field: 'source_latitude',
+          field: 'source_longitude',
           type: Sequelize.FLOAT(11, 10),
         },
         destinationLatitude: {
@@ -105,7 +105,7 @@ module.exports = {
           type: Sequelize.FLOAT(11, 10),
         },
         destinationLongitude: {
-          field: 'destination_latitude',
+          field: 'destination_longitude',
           type: Sequelize.FLOAT(11, 10),
         },
         startTime: {
@@ -123,9 +123,9 @@ module.exports = {
 
   down: queryInterface =>
     Promise.all([
+      queryInterface.dropTable('bookings'),
+      queryInterface.dropTable('cab_locations'),
       queryInterface.dropTable('users'),
       queryInterface.dropTable('cabs'),
-      queryInterface.dropTable('cab_locations'),
-      queryInterface.dropTable('bookings'),
     ]),
 };
