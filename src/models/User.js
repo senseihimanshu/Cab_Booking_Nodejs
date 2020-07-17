@@ -21,6 +21,7 @@ module.exports = global.sequelize.define(
     },
     email: {
       type: Sequelize.STRING(32),
+      unique: true,
       allowNull: false,
     },
   },

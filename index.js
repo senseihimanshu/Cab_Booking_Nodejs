@@ -19,6 +19,7 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening at port ${port}`));
 
 const sequelize = require('./src/database/connection');
+
 // Authenticating DB Connection
 try {
   sequelize.authenticate();

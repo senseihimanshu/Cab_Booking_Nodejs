@@ -21,9 +21,10 @@ module.exports = {
         email: {
           type: Sequelize.STRING(32),
           allowNull: false,
+          unique: true,
         },
-        createdAt: Sequelize.DATE,
-        modifiedAt: Sequelize.DATE,
+        created_at: Sequelize.DATE,
+        modified_at: Sequelize.DATE,
       }),
 
       queryInterface.createTable('cabs', {
@@ -36,6 +37,7 @@ module.exports = {
         cabCode: {
           field: 'cab_code',
           type: Sequelize.STRING(32),
+          unique: true,
           allowNull: false,
         },
         driverName: {
@@ -43,12 +45,12 @@ module.exports = {
           type: Sequelize.STRING(32),
           allowNull: false,
         },
-        createdAt: Sequelize.DATE,
-        modifiedAt: Sequelize.DATE,
+        created_at: Sequelize.DATE,
+        modified_at: Sequelize.DATE,
       }),
 
       queryInterface.createTable('cab_locations', {
-        cabId: {
+        cab_id: {
           type: Sequelize.INTEGER(11),
           allowNull: false,
           primaryKey: true,
@@ -65,8 +67,8 @@ module.exports = {
           field: 'cab_longitude',
           type: Sequelize.FLOAT(11, 10),
         },
-        createdAt: Sequelize.DATE,
-        modifiedAt: Sequelize.DATE,
+        created_at: Sequelize.DATE,
+        modified_at: Sequelize.DATE,
       }),
 
       queryInterface.createTable('bookings', {
@@ -116,8 +118,8 @@ module.exports = {
           field: 'end_time',
           type: Sequelize.DATE,
         },
-        createdAt: Sequelize.DATE,
-        modifiedAt: Sequelize.DATE,
+        created_at: Sequelize.DATE,
+        modified_at: Sequelize.DATE,
       }),
     ]),
 

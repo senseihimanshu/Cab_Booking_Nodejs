@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
+const sequelize = require('../database/connection');
 
-module.exports = global.sequelize.define(
+module.exports = sequelize.define(
   'Cab',
   {
     id: {
@@ -12,6 +13,7 @@ module.exports = global.sequelize.define(
     cabCode: {
       field: 'cab_code',
       type: Sequelize.STRING(32),
+      unique: true,
       allowNull: false,
     },
     driverName: {
