@@ -6,7 +6,10 @@ const config = require('config');
 
 // JWT Secret Key
 if (!config.get('jwtPrivateKey')) {
-  console.error('FATAL ERROR: secretkey not set');
+  console.error('FATAL ERROR: secretkey for JWT not set');
+  console.info(
+    'You can set secretkey using: "export secretkey <anything>"(For Terminal) and "set secretkey <anything>(For cmd)"'
+  );
   process.exit(1);
 }
 
